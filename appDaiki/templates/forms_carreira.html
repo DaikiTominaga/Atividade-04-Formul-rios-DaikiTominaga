@@ -1,0 +1,26 @@
+<h1>{{ action }} clube</h1>
+
+<form method='post'>
+  {% csrf_token %}
+  <div>
+    <label>Titulo: </label>
+    <input name='title' value = '{{ career.title }}'> 
+  </div>
+  
+  <div>
+    <label>Titulos: </label>
+    <input name='titulos' value = '{{ career.titulos }}'> 
+  </div>
+  
+  <div>
+    <label>Ano de criação: </label>
+    <input name='ano_criacao' type='date' value = '{{ career.ano_criacao }}'> 
+  </div>
+  
+  <div>
+    <label>Idade: </label>
+    <input name='idade' value = '{{ career.idade }}'> 
+  </div>
+
+  <input type='submit' value='Registrar'></inout>
+</form>

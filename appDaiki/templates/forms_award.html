@@ -1,0 +1,26 @@
+<h1>{{ action }} prêmio</h1>
+
+<form method='post'>
+  {% csrf_token %}
+  <div>
+    <label>Titulo: </label>
+    <input name='title' value = '{{ award.title }}'> 
+  </div>
+  
+  <div>
+    <label>Quantidade </label>
+    <input name='quantidade' value = '{{ award.quantidade }}'> 
+  </div>
+  
+  <div>
+    <label>Maior Quantidade: </label>
+    <input name='maiorquantidade' value = '{{ award.maiorquantidade }}'> 
+  </div>
+  
+  <div>
+    <label>Podium: </label>
+    <input name='podium' value = '{{ award.podium }}'> 
+  </div>
+
+  <input type='submit' value='Registrar'></inout>
+</form>

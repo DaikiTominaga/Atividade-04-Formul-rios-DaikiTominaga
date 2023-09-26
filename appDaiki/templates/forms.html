@@ -1,0 +1,26 @@
+<h1>{{ action }} estatística</h1>
+
+<form method='post'>
+  {% csrf_token %}
+  <div>
+    <label>Titulo: </label>
+    <input name='title' value = '{{ stats.title }}'> 
+  </div>
+  
+  <div>
+    <label>Podium: </label>
+    <input name='podium' value = '{{ stats.podium }}'> 
+  </div>
+  
+  <div>
+    <label>Priority: </label>
+    <input name='priority' value = '{{ stats.priority }}'> 
+  </div>
+  
+  <div>
+    <label>Categoria: </label>
+    <input name='category' value = '{{ stats.category }}'> 
+  </div>
+
+  <input type='submit' value='Registrar'></inout>
+</form>

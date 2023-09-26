@@ -1,0 +1,102 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<div class='fundo'>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Site Daiki Tominaga</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+
+<body>
+  <h1 class="nome">Daiki Svaiter Tominaga</h1>
+  <h2 style="text-align: center;">Lionel Messi: <i>Greatest of all time</i></h2>
+  <h3 style="text-align: center;">A trajetória do melhor jogador da história do futebol mundial.</h3>
+  <p>
+    Lionel Andrés Messi Cuccittini é conhecido por suas incríveis habilidades com a bola nos pés que encantam o mundo inteiro. Em 24 de junho de 1987, na cidade de Rosário na Argentina, nascia a nova lenda do futebol, que logo na juventude já demonstrou uma habilidade excepcional pelo seu primeiro clube, Newell's Old Boys. 
+    
+  </p>
+  <div class="classe"><img src="https://p2.trrsf.com/image/fget/cf/1200/630/middle/images.terra.com/2023/05/04/354946414-argentina-x-australia-messi.jpg" width="500"></div>
+  
+  <h4 class="classe5">Passagem lendária pelo clube espanhol FC Barcelona</h4>
+  <p style="text-align: justify;">
+    O argentino chegou ao clube catalão com apenas 15 anos de idade, e já impressionava o público. Seus dribles mágicos e frieza dentro de campo eram inigualáveis, assim, Messi se tornou <u>o maior jogador e ídolo</u> da torcida catalã, sendo este, <b>aquele com mais títulos, gols e assistências na história do clube</b>. Deixando, assim, o clube no dia 5 de agosto de 2021, com <b>672 gols</b> em 778 jogos.
+  </p>
+  <div class="classe2"><img src="https://tntsports.com.br/__export/1591966638998/sites/esporteinterativo/img/2020/06/12/hoje-tem-gol-do-messi.jpg" width="500"></div>
+  
+<p style="text-align:center">
+  <a href="https://www.youtube.com/watch?v=Q42WdM3JmHg" target="_blank">Imagem da comemoração de Lionel Messi após um gol no último minuto contra o Real Madrid em um El Clássico(Barcelona x Real Madrid)</a>
+</p>
+  
+<h4>Passagem pelo clube francês Paris Saint Germain</h4>
+  <p style="text-align: justify;">
+    No dia 10 de agosto de 2021, Lionel chegava ao clube francês <u>Paris Saint Germain</u>, onde, apesar do seu grande destaque no clube ao lado de excelentes jogadores e antigos parceiros do clube anterior como Neymar, não teve uma trajetória tão gloriosa como no Barcelona. Marcando 34 gols, conquistou duas vezes o campeonato francês e um troféu dos campeões.
+  </p>
+  <div class="classe3"><img src="https://www.psg.fr/media/209006/leo-cp.jpg?anchor=center&mode=crop&width=1200&height=675&quality=75" width="500"></div>
+
+  <h4>Passagem pelo clube estadunidense Inter Miami</h4>
+  <p style="text-align: justify;">
+    No dia 15 de julho de 2023, Messi chega ao clube <u>Inter Miami</u> e segue neste clube, onde lá alcançou 10 gols, 1 assistência e 1 título em apenas 7 jogos, sendo este o primeiro título da história do time. Desta maneira, o gênio do futebol segue fazendo história aos 36 anos de idade.
+    </p>
+<div class="classe4"><img src="{% static 'images/MessiMiami.jpg' %}" width="500"></div>
+
+<h4>Lista de clubes da carreira de Messi de 1(primeiro clube) ao 4(ultimo clube)</h4>
+<!--ol>
+  <li>Newell's Old Boys</li>
+  <li>Barcelona</li>
+  <li>Paris Saint Germain</li>
+  <li>Inter Miami</li>
+</ol> -->
+<ol>
+  {% for Carreira in career %}
+  <li>{{ Carreira.title }} 
+    <a href='/car/update/ {{ Carreira.id }}'>Atualizar</a>
+    <a href='/car/delete/ {{ Carreira.id }}'>Deletar</a>
+  </li>
+  {% endfor %}
+</ol>
+<a href="/car"> Adicionar novo clube</a>
+  
+<h4>Estatísticas do jogador</h4>
+<!--ul>
+  <li>817 gols</li>
+  <li>357 assistências</li>
+  <li>1035 jogos</li>
+</ul> -->
+<ul>
+  {% for Estats in stats %}
+  <li>{{ Estats.title }} 
+    <a href='/stat/update/ {{ Estats.id }}'>Atualizar</a>
+    <a href='/stat/delete/ {{ Estats.id }}'>Deletar</a>
+  </li>
+  {% endfor %}
+</ul>
+<a href="/stat"> Adicionar nova estatística</a>
+  
+<table class="tabela">
+    <tr>
+        <th>Prêmios individuais</th>
+        <th>Quantidade</th>
+    </tr>
+    {% for Premios in award %}
+    <tr>
+        <td>{{ Premios.title }} 
+          <a href='/premiado/update/ {{ Premios.id }}'>Atualizar</a>
+        <a href='/premiado/delete/ {{ Premios.id }}'>Deletar</a>
+        </td>
+        <td>{{ Premios.quantidade }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="/premiado"> Adicionar novo prêmio</a>
+
+
+</body>
+
+</html>
